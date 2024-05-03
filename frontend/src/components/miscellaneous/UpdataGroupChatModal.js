@@ -261,24 +261,27 @@ const UpdataGroupChatModal = ({ fetchAgain, setFetchAgain, fetchMessages }) => {
                 update
               </Button>
             </FormControl>
-            <FormControl display={"flex"} mb={2}>
-              <Input
-                placeholder="Add user to group"
-                mb={1}
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-              />
-              <Button
-                variant="solid"
-                onClick={handleSearch}
-                pl={7}
-                pr={7}
-                ml={1}
-                isLoading={searchLoading}
-              >
-                <i className="fas fa-search"></i>
-              </Button>
-            </FormControl>
+
+            {selectedChat.groupAdmin._id === user._id ? (
+              <FormControl display={"flex"} mb={2}>
+                <Input
+                  placeholder="Add user to group"
+                  mb={1}
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+                <Button
+                  variant="solid"
+                  onClick={handleSearch}
+                  pl={7}
+                  pr={7}
+                  ml={1}
+                  isLoading={searchLoading}
+                >
+                  <i className="fas fa-search"></i>
+                </Button>
+              </FormControl>
+            ) : null}
 
             {loading ? (
               <Box display="flex" justifyContent="center" alignItems="center">
