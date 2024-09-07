@@ -141,7 +141,7 @@ const SideDrawer = () => {
         </Tooltip>
 
         <Text fontSize={"3xl"} fontFamily={"work sans"}>
-          Chat-App
+          Baatein
         </Text>
 
         <div>
